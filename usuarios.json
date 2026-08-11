@@ -4,15 +4,15 @@
         "nombres": "Alan David",
         "apellidos": "Márquez P.",
         "telefono": "3178380152",
-        "direccion": "cll13#25-68",
+        "direccion": "cll13 #25-68",
         "tipo_usuario": "administrador"
     },
     {
-        "id": "1097499762",
-        "nombres": "Daniel Andrés",
-        "apellidos": "Márquez P.",
-        "telefono": "3053270713",
-        "direccion": "cll13#25-68",
+        "id": "63548786",
+        "nombres": "Johanna",
+        "apellidos": "Pérez López",
+        "telefono": "3174952524",
+        "direccion": "Cll13 #25-68",
         "tipo_usuario": "residente"
     }
 ]
