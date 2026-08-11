@@ -1,12 +1,28 @@
 from logs import registrar_log
-from mock_data import usuarios, prestamos
-from Herramientas_p import herramientas
+from Herramientas_p import herramientas, guardar_herramientas
 import datetime
+import json
+import os
+
+ARCHIVO_PRESTAMOS = "prestamos.json"
+prestamos = []
+
+def cargar_prestamos():
+    global prestamos
+    if os.path.exists(ARCHIVO_PRESTAMOS):
+        with open(ARCHIVO_PRESTAMOS, "r", encoding="utf-8") as archivo:
+            prestamos = json.load(archivo)
+    else:
+        prestamos = []
+
+def guardar_prestamos():
+    with open(ARCHIVO_PRESTAMOS, "w", encoding="utf-8") as archivo:
+        json.dump(prestamos, archivo, indent=4, ensure_ascii=False)
 
 def solicitar_prestamo(id_usuario, id_herramienta, cantidad_solicitada):
     herramienta_encontrada = None
     for h in herramientas:
-        if h["id"] == id_herramienta:
+        if str(h["id"]) == str(id_herramienta):
             herramienta_encontrada = h
             break
     if not herramienta_encontrada:
@@ -27,6 +43,7 @@ def solicitar_prestamo(id_usuario, id_herramienta, cantidad_solicitada):
         "observaciones": "Solicitud pendiente de aprobación"
     }
     prestamos.append(nuevo_prestamo)
+    guardar_prestamos()
     print(f"\nSolicitud {nuevo_id_prestamo} creada exitosamente. Esperando aprobación del Administrador.")
 
 def aprobar_prestamo(id_prestamo):
@@ -45,7 +62,7 @@ def aprobar_prestamo(id_prestamo):
     cantidad_solicitada = prestamo_encontrado["cantidad"]
     herramienta_encontrada = None
     for h in herramientas:
-        if h["id"] == id_herramienta:
+        if str(h["id"]) == str(id_herramienta):
             herramienta_encontrada = h
             break
     if herramienta_encontrada["stock"] < cantidad_solicitada:
@@ -53,10 +70,14 @@ def aprobar_prestamo(id_prestamo):
         print(mensaje_error)
         registrar_log(mensaje_error)
         prestamo_encontrado["estado"] = "rechazado"
+        guardar_prestamos()
         return
     herramienta_encontrada["stock"] -= cantidad_solicitada
     prestamo_encontrado["estado"] = "activo"
     prestamo_encontrado["observaciones"] = "Aprobado y entregado en buenas condiciones"
+
+    guardar_prestamos()
+    guardar_herramientas()
 
     mensaje_exito = f"\nPrestamo {id_prestamo} aprobado exitosamente. Nuevo stock de {herramienta_encontrada['nombre']}: {herramienta_encontrada['stock']}"
     print(mensaje_exito)
@@ -81,9 +102,13 @@ def registrar_devolucion(id_prestamo):
     id_herra = prestamo_encontrado["id_herramienta"]
     cantidad_a_restaurar = prestamo_encontrado["cantidad"]
     for h in herramientas:
-        if h["id"] == id_herra:
+        if str(h["id"]) == str(id_herra):
             h["stock"] +=cantidad_a_restaurar
+            guardar_prestamos()
+            guardar_herramientas()
             mensaje_exito = f"Devolución exitosa: Se devolvió la herramienta {h['nombre']}. Stock restaurado: {h['stock']}"
             print(mensaje_exito)
             registrar_log(mensaje_exito)
             break
+
+cargar_prestamos()

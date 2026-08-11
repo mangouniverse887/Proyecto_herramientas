@@ -1,4 +1,4 @@
-from mock_data import prestamos
+from prestamos import prestamos
 from Herramientas_p import herramientas
 import datetime
 

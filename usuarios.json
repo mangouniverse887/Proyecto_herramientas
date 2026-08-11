@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1097499267",
+        "nombres": "Alan David",
+        "apellidos": "Márquez P.",
+        "telefono": "3178380152",
+        "direccion": "cll13#25-68",
+        "tipo_usuario": "administrador"
+    },
+    {
+        "id": "1097499762",
+        "nombres": "Daniel Andrés",
+        "apellidos": "Márquez P.",
+        "telefono": "3053270713",
+        "direccion": "cll13#25-68",
+        "tipo_usuario": "residente"
+    }
+]
