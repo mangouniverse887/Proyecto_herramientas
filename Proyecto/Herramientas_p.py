@@ -9,7 +9,8 @@ CELESTE = "\033[36m"
 MORADO = "\033[35m"
 RESET = "\033[0m"
 
-ARCHIVO = "herramientas.json"
+DIRECTORIO_BASE = os.path.dirname(os.path.abspath(__file__))
+ARCHIVO = os.path.join(DIRECTORIO_BASE, "herramientas.json")
 
 herramientas = []
 

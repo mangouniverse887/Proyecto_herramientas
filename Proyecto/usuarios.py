@@ -1,7 +1,8 @@
 import json
 import os
+DIRECTORIO_BASE = os.path.dirname(os.path.abspath(__file__))
+ARCHIVO = os.path.join(DIRECTORIO_BASE, "usuarios.json")
 
-ARCHIVO = "usuarios.json"
 
 usuarios = []
 
