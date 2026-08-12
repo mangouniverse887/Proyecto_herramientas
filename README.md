@@ -2,6 +2,7 @@
 
 ## 1. Introducción al Sistema
 El Sistema Comunitario de Préstamo de Herramientas es una plataforma de consola diseñada para organizar el inventario compartido de una comunidad y facilitar el control de usuarios, solicitudes, préstamos, devoluciones y reportes. Toda la información gestionada (usuarios, préstamos y herramientas) se guarda de forma segura y persistente mediante archivos '.json' locales.
+> **⚠️ IMPORTANTE - PRIMER INGRESO:** Para acceder al sistema por primera vez, utilice el usuario base con permisos de administrador ingresando el ID **123456789**. Por motivos de seguridad, se recomienda enfáticamente crear sus propios usuarios administradores en el sistema y, posteriormente, **eliminar este usuario base**.
 
 ---
 
