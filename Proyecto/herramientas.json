@@ -4,7 +4,7 @@
         "nombre": "Taladro",
         "categoria": "Construcción",
         "stock": 5,
-        "estado": "activo",
+        "estado": "activa",
         "valor_estimado": 150000.0,
         "en_reparacion": 0
     },
@@ -13,8 +13,9 @@
         "nombre": "Pala",
         "categoria": "Construcción",
         "stock": 15,
-        "estado": "activo",
-        "valor_estimado": 15000.0
+        "estado": "activa",
+        "valor_estimado": 80000.0,
+        "en_reparacion": 0
     },
     {
         "id": 3,
@@ -22,6 +23,6 @@
         "categoria": "construcción",
         "stock": 5,
         "estado": "activo",
-        "valor_estimado": 50000.0
+        "valor_estimado": 30000.0
     }
 ]

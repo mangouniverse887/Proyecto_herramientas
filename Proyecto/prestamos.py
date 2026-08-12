@@ -31,7 +31,7 @@ def solicitar_prestamo(id_usuario, id_herramienta, cantidad_solicitada):
     if herramienta_encontrada["stock"] < cantidad_solicitada:
         print(f"Error: Stock insuficiente. Solo hay {herramienta_encontrada['stock']} disponibles de {herramienta_encontrada['nombre']}.")
         return
-    if herramienta_encontrada["estado"] != "activa":
+    if herramienta_encontrada["estado"] != "activo":
         print(f"Error: La herramienta no se puede prestar por que está '{herramienta_encontrada['estado']}.")
         return
 

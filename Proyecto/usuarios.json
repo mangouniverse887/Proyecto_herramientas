@@ -1,20 +1,11 @@
 [
     {
-        "id": "1097499267",
-        "nombres": "Alan David",
-        "apellidos": "Márquez P.",
-        "telefono": "3178380152",
-        "direccion": "Cll13 #25-68",
+        "id": "123456789",
+        "nombres": "Fulano J",
+        "apellidos": "De Tal",
+        "telefono": "3141592653",
+        "direccion": "Su Casa",
         "tipo_usuario": "administrador",
-        "penalizaciones": 0
-    },
-    {
-        "id": "63548786",
-        "nombres": "Johanna",
-        "apellidos": "Pérez López",
-        "telefono": "3174952524",
-        "direccion": "Cll13 #25-68",
-        "tipo_usuario": "residente",
         "penalizaciones": 0
     }
 ]
