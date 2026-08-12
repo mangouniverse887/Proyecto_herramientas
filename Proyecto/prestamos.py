@@ -3,8 +3,8 @@ from Herramientas_p import herramientas, guardar_herramientas
 import datetime
 import json
 import os
-
-ARCHIVO_PRESTAMOS = "prestamos.json"
+DIRECTORIO_BASE = os.path.dirname(os.path.abspath(__file__))
+ARCHIVO_PRESTAMOS = os.path.join(DIRECTORIO_BASE, "prestamos.json")
 prestamos = []
 
 def cargar_prestamos():
